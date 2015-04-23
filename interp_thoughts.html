@@ -188,7 +188,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="I-first-tested-simple-Lagrangian-interpolation-over-the-elements-(it-did-not-work-well!):">I first tested simple Lagrangian interpolation over the elements (it did not work well!):<a class="anchor-link" href="#I-first-tested-simple-Lagrangian-interpolation-over-the-elements-(it-did-not-work-well!):">&#182;</a></h2><p>It cannot resolve oscillations very well over long periods, and some elements turned out to be hard to approximate. Something else will have to do...</p>
+<h2 id="I-first-tested-simple-equidistant-Lagrangian-interpolation-over-the-elements-(it-did-not-work-well!):">I first tested simple equidistant Lagrangian interpolation over the elements (it did not work well!):<a class="anchor-link" href="#I-first-tested-simple-equidistant-Lagrangian-interpolation-over-the-elements-(it-did-not-work-well!):">&#182;</a></h2><p>It cannot resolve oscillations very well over long periods, and some elements turned out to be hard to approximate. Something else will have to do...</p>
 
 </div>
 </div>
@@ -714,7 +714,7 @@ vpDJpgh+AAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[295]:</div>
+<div class="prompt input_prompt">In&nbsp;[310]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">f</span><span class="p">,</span> <span class="p">((</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">),</span> <span class="p">(</span><span class="n">ax3</span><span class="p">,</span> <span class="n">ax4</span><span class="p">),</span> <span class="p">(</span><span class="n">ax5</span><span class="p">,</span> <span class="n">ax6</span><span class="p">))</span> <span class="o">=</span> <span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -1435,8 +1435,8 @@ AAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It is clear that interpolating over the elements does not work well with Lagrangian interpolation... Runge's phenomenon shows up, and there are some parts in W and w that are not smooth. Spline interpolation may be better for the elements, or even piecewise Lagrangian interpolation.</p>
-<p>It may be best to interpolate over the state (r, v) as Izzo suggested, since they should be clean and simply oscillatory over long periods. I don't know if the nuanced differences between the simple keplerian elements and the spice elements will show though. Would a piecewise Lagrangian work?</p>
+<p>It is clear that interpolating over the elements does not work well with equidistant Lagrangian interpolation... Runge's phenomenon shows up, and there are some parts in W and w that are not smooth. Spline interpolation may be better for the elements, or even piecewise Lagrangian interpolation.</p>
+<p>It may be best to interpolate over the state (r, v) as Izzo suggested, since they should have cleaner curves over short periods, and clean oscillations over long periods. I don't know if the nuanced differences between the simple keplerian elements and the spice elements will show though. Would a piecewise Lagrangian work?</p>
 
 </div>
 </div>
