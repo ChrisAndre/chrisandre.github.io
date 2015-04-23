@@ -178,7 +178,7 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="PyKEP-ephemeris-interpolation-initial-thoughts">PyKEP ephemeris interpolation initial thoughts<a class="anchor-link" href="#PyKEP-ephemeris-interpolation-initial-thoughts">&#182;</a></h1><h5 id="Chris-Andre-(github.com/ChrisAndre,-chrisandre01@gmail.com)">Chris Andre (github.com/ChrisAndre, chrisandre01@gmail.com)<a class="anchor-link" href="#Chris-Andre-(github.com/ChrisAndre,-chrisandre01@gmail.com)">&#182;</a></h5><p>The goal is to find an interpolating function over the ephemerides taken from a high-fidelity SPICE planet object which can then be distributed so that the high-quality ephemerides can be reconstructed across many other nodes without needing the heavy kernels to be distributed.</p>
-<p>This is a preliminary Python implementation of the interpolation part... I am making sure there will not be any issues with the quality of the interpolation.</p>
+<p>This is a preliminary Python study of the interpolation part... I am making sure there will not be any issues with the quality of the interpolation.</p>
 
 </div>
 </div>
@@ -188,7 +188,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="I-first-tested-simple-Lagrangian-interpolation-over-the-elements-(it-unsurprisingly-did-not-work-well):">I first tested simple Lagrangian interpolation over the elements (it unsurprisingly did not work well):<a class="anchor-link" href="#I-first-tested-simple-Lagrangian-interpolation-over-the-elements-(it-unsurprisingly-did-not-work-well):">&#182;</a></h2><p>It cannot resolve oscillations very well over long periods, and some elements turned out to be hard to approximate.</p>
+<h2 id="I-first-tested-simple-Lagrangian-interpolation-over-the-elements-(it-did-not-work-well!):">I first tested simple Lagrangian interpolation over the elements (it did not work well!):<a class="anchor-link" href="#I-first-tested-simple-Lagrangian-interpolation-over-the-elements-(it-did-not-work-well!):">&#182;</a></h2><p>It cannot resolve oscillations very well over long periods, and some elements turned out to be hard to approximate. Something else will have to do...</p>
 
 </div>
 </div>
@@ -637,7 +637,7 @@ vpDJpgh+AAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Testing-on-actual-ephemerides">Testing on actual ephemerides<a class="anchor-link" href="#Testing-on-actual-ephemerides">&#182;</a></h2><p>I am interpolating over the elements rather than the state (r,v) for now:</p>
+<h2 id="Testing-on-ephemerides">Testing on ephemerides<a class="anchor-link" href="#Testing-on-ephemerides">&#182;</a></h2><p>I am interpolating over the elements rather than the state (r,v) for now:</p>
 
 </div>
 </div>
@@ -1435,9 +1435,9 @@ AAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It is clear that interpolating over the elements does not work well with Lagrangian interpolation... Spline interpolation may be better for the elements.</p>
-<p>It may be best to interpolate over the state (r, v) as Izzo suggested, since they should be clean and simply oscillatory over long periods. I don't know if the nuanced differences between the simple keplerian elements and the spice elements will show though.</p>
-<h1 id="Next-thing-to-try-is-interpolating-over-the-state-instead...">Next thing to try is interpolating over the state instead...<a class="anchor-link" href="#Next-thing-to-try-is-interpolating-over-the-state-instead...">&#182;</a></h1>
+<p>It is clear that interpolating over the elements does not work well with Lagrangian interpolation... Runge's phenomenon shows up, and there are some parts in W and w that are not smooth. Spline interpolation may be better for the elements, or even piecewise Lagrangian interpolation.</p>
+<p>It may be best to interpolate over the state (r, v) as Izzo suggested, since they should be clean and simply oscillatory over long periods. I don't know if the nuanced differences between the simple keplerian elements and the spice elements will show though. Would a piecewise Lagrangian work?</p>
+
 </div>
 </div>
 </div>
