@@ -1,11 +1,13 @@
 ---
 layout: post
-title: "Lambert solver for reduced 2D transfer problem"
+title: "Lambert solver for reduced 2D exponential sinusoid transfer problem"
 date: 2015-05-08 05:30:00 -0400
 comments: false
 ---
 
 I have covered some ground on the 2-dimensional case in Python, so far I have this running:
+
+###Example Earth-Mars transfer arc
 
 ![Example Earth-Mars transfer](/images/expsin_a.png)
 
