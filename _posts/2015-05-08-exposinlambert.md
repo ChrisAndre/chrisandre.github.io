@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Initial post"
+title: "Lambert solver for reduced 2D transfer problem"
 date: 2015-05-08 05:30:00 -0400
 comments: false
 ---
