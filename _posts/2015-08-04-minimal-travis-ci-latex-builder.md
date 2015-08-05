@@ -4,12 +4,13 @@ title: "Minimal Travis CI LaTeX Builder"
 date: 2015-08-04 19:30:00 -0400
 comments: false
 ---
-# Minimal example - setup Travis-CI to emit a .pdf from a .tex source in a Github repo
-Create a repo on Github
+# Minimal example - set up Travis-CI to build and emit a .pdf from a .tex source in a Github repo
 
-From travis-ci.org, toggle your Github repo on
+* Create a repo on Github
 
-Locally, create a git repo:
+* From travis-ci.org, toggle your Github repo on
+
+* Locally, create a git repo:
 
 {% highlight bash %}
 git init repo
@@ -17,9 +18,9 @@ cd repo
 git remote add origin https://github.com/user/repo.git
 {% endhighlight %}
 
-Add a test LaTeX source root.tex
+* Add a test LaTeX source `root.tex`
 
-And add a .travis.yml:
+* And add a .travis.yml:
 
 {% highlight yaml %}
 before_install:
@@ -39,7 +40,7 @@ deploy:
     tags: true
 {% endhighlight %}
 
-On your command line:
+* On your command line:
 
 {% highlight bash %}
 sudo apt-get install ruby-dev && gem
@@ -47,9 +48,9 @@ gem install travis
 travis setup releases
 {% endhighlight %}
 
-This will populate the api_key field so that it may autodeploy a release.
+* This will populate the api_key field so that it may autodeploy a release.
 
-On your command line:
+* On your command line:
 
 {% highlight bash %}
 git add --all
@@ -58,4 +59,4 @@ git tag tagname
 git push -u origin --tags
 {% endhighlight %}
 
-On Github, a new release will appear. Once Travis-CI finishes the build, root.pdf will appear in the downloads section beside the tarballs.
+* On Github, a new release will appear. Once Travis-CI finishes the build, root.pdf will appear in the downloads section beside the tarballs.
